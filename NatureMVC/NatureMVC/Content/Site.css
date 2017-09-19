@@ -1,4 +1,7 @@
 ﻿body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(/image/back_image.jpg);
+    background-repeat: no-repeat;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -17,8 +20,309 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
+input, select, textarea {
     max-width: 280px;
+}
+
+#container {
+    width: 400px;
+}
+
+#reservation {
+    background-color: #ffb31a;
+    border-color: #ffaa00;
+    border-radius: 15px;
+    width: 400px;
+    height: 600px;
+}
+
+h2 {
+    text-align: center;
+    color: #558000;
+}
+
+form {
+    padding-left: 15px;
+}
+
+label {
+    line-height: 4px;
+    font-weight: bold;
+    color:  #77b300;
+}
+
+#textarea {
+    width: 250px;
+}
+
+/*.calendar*/
+.ui-datepicker-trigger {  
+        width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#showImage{
+
+}
+
+/*.shomeMe is inside the div#showImage*/
+.showMe {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 450px;
+    width: 834px;
+    height: 566px;
+}
+
+#first {
+    display: block;
+} 
+
+#arrowLeft, #arrowRight {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#arrowLeft {
+    display: none;
+    position: absolute;
+    top: 300px;
+    left: 410px;
+}
+
+#arrowRight {
+    position: absolute;
+    top: 300px;
+    left: 1300px;
+}
+
+.horses{
+    border: 3px double #86592d;
+    margin: 40px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #ffb31a;
+} 
+
+#checkHorseRideDate{
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.showHorse {
+    position: relative;
+    left: 450px;
+    display: none;
+    width: 380px;
+    height: 350px;
+}
+
+fieldset {
+    border: 2px double #86592d;
+    border-radius: 15px;
+    background-image: url(/image/back_image.jpg);
+    background-repeat: no-repeat;
+}
+
+#age{
+    display: none;
+    margin: 15px; 
+}
+
+.legend {
+    font-weight: bold;
+    color: #558000;
+}
+
+/*button rules*/
+.button {
+    background-color: #77b300; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.button.disabled {
+  opacity: 0.65; 
+  cursor: not-allowed;
+}
+
+.button, .button.disabled:hover {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border:1px solid #558000; 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family:arial, helvetica, sans-serif; 
+    padding: 10px 10px 10px 10px; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    text-align: center; 
+    color: #FFFFFF; 
+    background-color: #77b300;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #669900), color-stop(100%, #558000));
+    background-image: -webkit-linear-gradient(top, #669900, #558000);
+    background-image: -moz-linear-gradient(top, #669900, #558000);
+    background-image: -ms-linear-gradient(top, #669900, #558000);
+    background-image: -o-linear-gradient(top, #669900, #558000);
+    background-image: linear-gradient(top, #669900, #558000);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#669900, endColorstr=#558000);
+}
+
+.button:hover{
+    border:1px solid #558000;
+    background-color: #558000;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009933), color-stop(100%, #006622));
+    background-image: -webkit-linear-gradient(top, #009933, #006622);
+    background-image: -moz-linear-gradient(top, #009933, #006622b);
+    background-image: -ms-linear-gradient(top, #009933, #006622);
+    background-image: -o-linear-gradient(top, #009933, #006622);
+    background-image: linear-gradient(top, #009933, #006622b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#009933, endColorstr=#006622);
+}
+
+/*popup rules*/
+.dialogSales {
+    position: absolute;
+    height: 450px;
+    width: 800px;
+    top: 250px;
+    left: 500px;
+    background-image: url(/image/sales.jpg);
+    display: block;
+}
+
+/*.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable{
+    position: absolute;
+    height: 450px;
+    width: 780px;
+    background-image: url(/image/sales.jpg);
+    display: block;
+}*/
+
+.ui-widget.ui-widget-content {
+    border: 1px solid black;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 3px;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 3px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 3px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 3px;
+}
+
+.ui-widget-content {
+    border: 1px solid black;
+    background: none;
+    color: none;
+}
+
+.ui-widget {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+}
+
+.ui-resizable {
+    position: relative;
+}
+
+.ui-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .2em;
+    outline: 0;
+}
+
+.ui-front {
+    z-index: 100;
+}
+
+div {
+    display: block;
+}
+
+.ui-dialog .ui-dialog-title {
+    float: none;
+    margin: .1em 0;
+    white-space: nowrap;
+    width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    cursor: none;
+}
+
+.ui-widget-header {
+    border: none;
+    background: none;
+    color: none;
+    font-weight: lighter;
+}
+
+.ui-widget {
+    font-family: none;
+    font-size: 0;
+}
+
+.ui-widget-content {
+    border: none;
+    background: none;
+    color: none;
+}
+
+.ui-button .ui-icon {
+    background-image: url(images/ui-icons_777777_256x240.png);
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url(images/ui-icons_444444_256x240.png);
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+    background-image: url(images/ui-icons_444444_256x240.png);
+}
+
+.ui-button-icon-only .ui-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.ui-icon-closethick {
+    background-position: -96px -128px;
+}
+
+.ui-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.ui-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -.25em;
+    position: relative;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
 }

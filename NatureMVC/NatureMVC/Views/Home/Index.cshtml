@@ -1,31 +1,96 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Nature is your friend";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="dialogSales"></div>
+    <div id="container">
+        <img src="image/logo.png" />
+        <div id="reservation">
+            <h2>Request a free estimate</h2>
+            <div class="day">
+                <form>
+                    <label for="datepicker">
+                        Check- in<br />
+                    </label>
+                    <input type="text" name="checkDatein" id="datepicker" class="calendar"/><br />
+                    <label for="dateRangepicker">
+                        Check-out<br />
+                    </label>
+                    <input type="text" name="checkDateout" id="dateRangepicker" class="calendar"/><br />
+                    <label for="numAdults">
+                        Adults<br />
+                    </label>
+                    <input type="number" name="adults" min="1" max="20" id="numadults" /><br />
+                    <label for="numChildren">
+                        Children<br />
+                    </label>
+                    <input type="number" name="children" min="0" max="10" id="numchildren" /><br />
+                    <label for="fullName">
+                        Name<br />
+                    </label>
+                    <input type="text" name="firstname" value="" placeholder="Fullname" /><br />
+                    <label for="emailAddress">
+                        Email<br />
+                    </label>
+                    <input type="email" /><br />
+                    <label for="phoneNumber">
+                        Phone<br />
+                    </label>
+                    <input type="tel" /><br />
+                    <label for="characters">
+                        Request<br />
+                    </label>
+                    <textarea rows="8" cols="50" id="textarea"></textarea><br />
+                    <label for="terms">
+                        <input type="radio" name="accept" value="yes" />Agree with  Terms & Conditions<br />
+                    </label>
+                    <button type="submit" class="button">Send</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div id="showImage">
+        <img src="image/cascina.jpg" class="showMe" id="first" />
+        <img src="image/interno.jpg" class="showMe" />
+        <img src="image/esterno.jpeg" class="showMe" />
+        <img src="image/evento.jpeg" class="showMe" />
+        <img src="image/giochi.jpeg" class="showMe" />
+        <img src="image/notte.jpeg" class="showMe" />
+        <img src="image/pavone.jpg" class="showMe" />
+        <img src="image/animali.jpeg" class="showMe" />
+        <img src="image/arrowLeft.png" id="arrowLeft" class="clickMe" />
+        <img src="image/arrowRight.png" id="arrowRight" class="clickMe" />
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="horses">
+        <div id="availability">
+            <h2>A Funny Ride</h2>
+            <div id="checkHorseRideDate">
+                <form>
+                    <label>
+                        Check 	availability<br />
+                        <input type="text" name="checkDate" id="datepickerHorse" class="calendar"/> <br />
+                    </label>
+                    <div id="age">
+                        <fieldset>
+                            <legend class="legend">Your age is:</legend>
+                            <input type="radio" name="age" value="0-6" class="checkAge" /> <label for="0-6">0-6</label><br />
+                            <input type="radio" name="age" value="7-15" class="checkAge" /> <label for="7-15">7-15</label><br />
+                            <input type="radio" name="age" value="16-over" class="checkAge" /> <label for="16-Over5">16-Over</label>
+                        </fieldset>
+                        <button type="submit" id="submitDay" class="button disabled">Check</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <img src="image/pony.jpg" id="pony" class="showHorse" />
+        <img src="image/medio.jpg" id="medio" class="showHorse" />
+        <img src="image/grande.jpg" id="grande" class="showHorse" />
     </div>
-</div>
+    <!--<script src="js/r.js" data-main="js/app"></script>-->
+    <!--<script src="/js/jquery-ui.js"></script>
+    <script src="/js/jquery.js"></script>-->
+
+@section scripts{
+    <script src="~/Typescript/app.js"></script>
+}
