@@ -13,8 +13,8 @@ namespace NatureMVC
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                 "~/Content/site.css",
-                      "~/Content/jquery-ui*"));
+                
+                      "~/Content/jquery-ui*", "~/Content/site.css"));
         }
     }
 }

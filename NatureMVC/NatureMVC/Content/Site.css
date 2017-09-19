@@ -6,22 +6,9 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input, select, textarea {
-    max-width: 280px;
 }
 
 #container {
@@ -62,11 +49,6 @@ label {
     cursor: pointer;
 }
 
-#showImage{
-
-}
-
-/*.shomeMe is inside the div#showImage*/
 .showMe {
     display: none;
     position: absolute;
@@ -137,7 +119,6 @@ fieldset {
     color: #558000;
 }
 
-/*button rules*/
 .button {
     background-color: #77b300; 
     border: none;
@@ -187,7 +168,6 @@ fieldset {
     background-image: linear-gradient(top, #009933, #006622b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#009933, endColorstr=#006622);
 }
 
-/*popup rules*/
 .dialogSales {
     position: absolute;
     height: 450px;
@@ -198,15 +178,9 @@ fieldset {
     display: block;
 }
 
-/*.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable{
-    position: absolute;
-    height: 450px;
-    width: 780px;
-    background-image: url(/image/sales.jpg);
-    display: block;
-}*/
 
-.ui-widget.ui-widget-content {
+
+/*.ui-widget.ui-widget-content {
     border: 1px solid black;
 }
 
@@ -251,13 +225,10 @@ fieldset {
 
 .ui-front {
     z-index: 100;
-}
+}*/
 
-div {
-    display: block;
-}
 
-.ui-dialog .ui-dialog-title {
+/*.ui-dialog .ui-dialog-title {
     float: none;
     margin: .1em 0;
     white-space: nowrap;
@@ -325,4 +296,4 @@ div {
     text-indent: -99999px;
     overflow: hidden;
     background-repeat: no-repeat;
-}
+}*/
