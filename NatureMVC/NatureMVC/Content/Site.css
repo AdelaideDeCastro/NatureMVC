@@ -1,9 +1,10 @@
 ﻿body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(/image/back_image.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     padding-top: 50px;
     padding-bottom: 20px;
+    background-attachment: fixed;
 }
 
 .body-content {
@@ -11,24 +12,27 @@
     padding-right: 15px;
 }
 
-#container {
+#informationData {
     width: 400px;
+    top: 30px;
 }
 
 #reservation {
+    position: relative;
     background-color: #ffb31a;
     border-color: #ffaa00;
     border-radius: 15px;
     width: 400px;
     height: 600px;
+    top: 30px;
 }
 
-h2 {
+.heading2 {
     text-align: center;
     color: #558000;
 }
 
-form {
+.dataSelection {
     padding-left: 15px;
 }
 
@@ -52,7 +56,7 @@ label {
 .showMe {
     display: none;
     position: absolute;
-    top: 35px;
+    top: 310px;
     left: 450px;
     width: 834px;
     height: 566px;
@@ -71,13 +75,13 @@ label {
 #arrowLeft {
     display: none;
     position: absolute;
-    top: 300px;
+    top: 600px;
     left: 410px;
 }
 
 #arrowRight {
     position: absolute;
-    top: 300px;
+    top: 600px;
     left: 1300px;
 }
 
@@ -102,7 +106,7 @@ label {
     height: 350px;
 }
 
-fieldset {
+.borderDesign {
     border: 2px double #86592d;
     border-radius: 15px;
     background-image: url(/image/back_image.jpg);
@@ -168,132 +172,109 @@ fieldset {
     background-image: linear-gradient(top, #009933, #006622b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#009933, endColorstr=#006622);
 }
 
-.dialogSales {
+#salesTime {
     position: absolute;
-    height: 450px;
+    height: 350px;
     width: 800px;
-    top: 250px;
-    left: 500px;
+    top: 420px;
+    left: 465px;
     background-image: url(/image/sales.jpg);
     display: block;
-}
-
-
-
-/*.ui-widget.ui-widget-content {
-    border: 1px solid black;
-}
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-    border-bottom-right-radius: 3px;
-}
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
-    border-bottom-left-radius: 3px;
-}
-
-.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-    border-top-right-radius: 3px;
-}
-
-.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-    border-top-left-radius: 3px;
-}
-
-.ui-widget-content {
-    border: 1px solid black;
-    background: none;
-    color: none;
-}
-
-.ui-widget {
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 1em;
-}
-
-.ui-resizable {
-    position: relative;
-}
-
-.ui-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: .2em;
-    outline: 0;
-}
-
-.ui-front {
     z-index: 100;
-}*/
-
-
-/*.ui-dialog .ui-dialog-title {
-    float: none;
-    margin: .1em 0;
-    white-space: nowrap;
-    width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    cursor: pointer;
 }
 
-.ui-draggable .ui-dialog-titlebar {
-    cursor: none;
-}
-
-.ui-widget-header {
-    border: none;
-    background: none;
-    color: none;
-    font-weight: lighter;
-}
-
-.ui-widget {
-    font-family: none;
-    font-size: 0;
-}
-
-.ui-widget-content {
-    border: none;
-    background: none;
-    color: none;
-}
-
-.ui-button .ui-icon {
-    background-image: url(images/ui-icons_777777_256x240.png);
-}
-
-.ui-widget-header .ui-icon {
-    background-image: url(images/ui-icons_444444_256x240.png);
-}
-
-.ui-icon, .ui-widget-content .ui-icon {
-    background-image: url(images/ui-icons_444444_256x240.png);
-}
-
-.ui-button-icon-only .ui-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -8px;
-    margin-left: -8px;
-}
-
-.ui-icon-closethick {
-    background-position: -96px -128px;
-}
-
-.ui-icon {
-    width: 16px;
-    height: 16px;
-}
-
-.ui-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -.25em;
+#escPoint{
     position: relative;
-    text-indent: -99999px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-}*/
+    height: 20px;
+    width: 20px;
+    top: 362px;
+    left: 1222px;
+    background-image: url(/image/sales.jpg);
+    display: block;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.closingDays{
+    position: relative;
+    display: none;
+}
+
+.closingDays.ui-widget.ui-widget-content {
+    border: 1px solid  #cc2900;
+}
+
+.closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 5px;
+}
+
+.closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 5px;
+}
+
+.closingDays.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 5px;
+}
+
+.closingDays.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 5px;
+}
+
+.closingDays.ui-widget-content{
+    border: 1px solid  #cc2900;
+    background-image: url(/image/background_closingDay.jpg);
+    color: #0086b3;
+}
+
+.navbar-inverse { 
+    background-color: #000000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: -webkit-fill-available;
+    height: 100px;
+    color: white;
+}
+
+.navbar-collapse collapse{
+
+}
+
+.nav.navbar-nav{
+    display: inline-flex;
+    list-style-type: none;
+}
+
+li.nav.navbar-nav {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    border: 10px;
+}
+
+ul.nav.navbar-nav.navbar-right{
+    position: relative;
+    top: 5px;
+    left: 850px;
+}
+
+#logoCascina{
+    position: relative;
+    top: 40px;
+}
+
+ul.nav.navbar-nav.navbar-right li{
+    margin: 10px;
+}
+
+ul.nav.navbar-nav{
+    position: relative;
+    top: 5px;
+    left: 200px;
+}
+
+ul.nav.navbar-nav li a, .navbar-brand{
+    margin: 10px;
+    color: white;
+}
+

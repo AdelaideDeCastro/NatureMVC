@@ -3,13 +3,16 @@
 }
 
 
-    <div class="dialogSales"></div>
-    <div id="container">
-        <img src="image/logo.png" />
+    <div id="dialogSales">
+        <img src="~/image/sales.jpg" id="salesTime" />
+        <img src="~/image/esc.jpg" id="escPoint" />
+    </div>
+    <div id="informationData">
+        <img src="image/logo.png" id="logoCascina"/>
         <div id="reservation">
-            <h2>Request a free estimate</h2>
+            <h2 class="heading2">Request a free estimate</h2>
             <div class="day">
-                <form>
+                <form class="dataSelection">
                     <label for="datepicker">
                         Check- in<br />
                     </label>
@@ -64,15 +67,15 @@
     </div>
     <div class="horses">
         <div id="availability">
-            <h2>A Funny Ride</h2>
-            <div id="checkHorseRideDate">
-                <form>
+            <h2 class="heading2" id="headHorse">A Funny Ride</h2>
+            <div id="checkHorseRideDate">   
+                <form class="dataSelection">
                     <label>
                         Check 	availability<br />
                         <input type="text" name="checkDate" id="datepickerHorse" class="calendar"/> <br />
                     </label>
                     <div id="age">
-                        <fieldset>
+                        <fieldset class="borderDesign">
                             <legend class="legend">Your age is:</legend>
                             <input type="radio" name="age" value="0-6" class="checkAge" /> <label for="0-6">0-6</label><br />
                             <input type="radio" name="age" value="7-15" class="checkAge" /> <label for="7-15">7-15</label><br />
@@ -86,6 +89,18 @@
         <img src="image/pony.jpg" id="pony" class="showHorse" />
         <img src="image/medio.jpg" id="medio" class="showHorse" />
         <img src="image/grande.jpg" id="grande" class="showHorse" />
+    </div>
+    <div class="closingDays" title="Closing Days">
+        <p>
+            <strong>Remember!!!</strong> We are closed during these days:<br />
+            <ul>
+                <li>January 1st</li>
+                <li>January 6th</li>
+                <li>Easter day</li>
+                <li>August 15th</li>
+                <li>December 31st</li>
+            </ul>
+        </p>
     </div>
     <!--<script src="js/r.js" data-main="js/app"></script>-->
     <!--<script src="/js/jquery-ui.js"></script>

@@ -24,12 +24,9 @@
 //    }
 //})
 window.onload = function () {
-    $("#dialog").dialog({
-        autoOpen: true,
-        show: {
-            effect: "blind",
-            duration: 1000
-        }
+    $('#salesTime, #escPoint').css('display', 'block');
+    $('#escPoint').click(function () {
+        $('#salesTime, #escPoint').css('display', 'none');
     });
     var i = 0;
     showImage(i);
@@ -105,6 +102,13 @@ function checkDateIn() {
         minDate: new Date,
         maxDate: tomorrow2,
         onSelect: function (dateText) {
+            $(".closingDays").dialog({
+                autoOpen: true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                }
+            });
             $('#age').css('display', 'block');
             $('.checkAge').click(function (evt) {
                 if (evt.currentTarget.value == "0-6") {
