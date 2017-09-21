@@ -1,7 +1,6 @@
 ﻿body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(/image/back_image.jpg);
-    background-repeat: repeat-y;
     padding-top: 50px;
     padding-bottom: 20px;
     background-attachment: fixed;
@@ -76,7 +75,7 @@ label {
     display: none;
     position: absolute;
     top: 600px;
-    left: 410px;
+    left: 425px;
 }
 
 #arrowRight {
@@ -94,6 +93,7 @@ label {
 } 
 
 #checkHorseRideDate{
+    position: relative;
     padding-bottom: 10px;
     padding-right: 10px;
 }
@@ -106,7 +106,10 @@ label {
     height: 350px;
 }
 
-.borderDesign {
+#borderDesign {
+    position:relative;
+    left:-230px;
+    width: 600px;
     border: 2px double #86592d;
     border-radius: 15px;
     background-image: url(/image/back_image.jpg);
@@ -233,13 +236,10 @@ label {
     top: 0px;
     left: 0px;
     width: -webkit-fill-available;
-    height: 100px;
+    height: 70px;
     color: white;
 }
 
-.navbar-collapse collapse{
-
-}
 
 .nav.navbar-nav{
     display: inline-flex;
@@ -278,3 +278,19 @@ ul.nav.navbar-nav li a, .navbar-brand{
     color: white;
 }
 
+ .availableHorseRide{
+    position: relative;
+    left: 500px;
+    width: 600px;
+}
+
+#checkHorseRideDate{
+    position: relative;
+    left: 500px;
+    width: 1000px;
+}
+
+#submitDay{
+    position: relative;
+    left: -226px;
+}

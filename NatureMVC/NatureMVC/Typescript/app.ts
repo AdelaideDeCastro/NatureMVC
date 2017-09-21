@@ -81,7 +81,7 @@ function checkDateIn() {
     $('#datepicker').datepicker({
         showAnim: "fold",
         showOn: "button",
-        buttonImage: "image/logoCalendar.png",
+        buttonImage: "/image/logoCalendar.png",
         buttonImageOnly: true,
         showButtonPanel: true,
         showOtherMonths: true,
@@ -97,7 +97,7 @@ function checkDateIn() {
     $('#dateRangepicker').datepicker({
         showAnim: "fold",
         showOn: "button",
-        buttonImage: "image/logoCalendar.png",
+        buttonImage: "/image/logoCalendar.png",
         buttonImageOnly: true,
         showButtonPanel: true,
         showOtherMonths: true,
@@ -110,11 +110,12 @@ function checkDateIn() {
         }
     });
 
-        let tomorrow2 = new Date(today.getTime() + 24 * 60 * 60 * 1000 * 182.5);
+    let tomorrow2 = new Date(today.getTime() + 24 * 60 * 60 * 1000 * 182.5);
+
         $('#datepickerHorse').datepicker({
             showAnim: "fold",
             showOn: "button",
-            buttonImage: "image/logoCalendar.png",
+            buttonImage: "/image/logoCalendar.png",
             buttonImageOnly: true,
             showButtonPanel: true,
             showOtherMonths: true,
@@ -122,16 +123,26 @@ function checkDateIn() {
             minDate: new Date,
             maxDate: tomorrow2,
             onSelect: function (dateText) {
-
-                $(".closingDays").dialog({
-                    autoOpen: true,
-                    show: {
-                        effect: "blind",
-                        duration: 1000
+                //$(".closingDays").dialog({
+                //    autoOpen: true,
+                //    show: {
+                //        effect: "blind",
+                //        duration: 1000
+                //    }
+                //}); 
+                let pippo = function (date) {
+                    let arrayDay = ['01-01-2017', '01-06-2017', '08-15-2017', '12-24-2017', '12-25-2017', '12-31-2017'];
+                    let index_i = arrayDay.length;
+                    let m = date.getMonth();
+                    let d = date.getDate();
+                    let y = date.getFullYear();
+                    for (index_i = 0; index_i <= arrayDay.length; index_i++) {
+                        if ($.inArray((m + 1) + '-' + d + '-' + y, arrayDay) != -1 || new Date() > date) {
+                            return false;
+                        }
+                        return true;
                     }
-                }); 
-
-                
+                }
                 $('#age').css('display', 'block');
 
                 $('.checkAge').click(function (evt) {
@@ -153,3 +164,4 @@ function checkDateIn() {
             }
         });
 }
+
