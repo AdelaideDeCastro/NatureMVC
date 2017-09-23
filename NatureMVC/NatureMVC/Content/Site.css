@@ -23,7 +23,7 @@
     border-radius: 15px;
     width: 400px;
     height: 600px;
-    top: 30px;
+    top: -30px;
 }
 
 .heading2 {
@@ -55,10 +55,10 @@ label {
 .showMe {
     display: none;
     position: absolute;
-    top: 310px;
+    top: 245px;
     left: 450px;
-    width: 834px;
-    height: 566px;
+    width: 871px;
+    height: 601px;
 }
 
 #first {
@@ -68,23 +68,23 @@ label {
 #arrowLeft, #arrowRight {
     width: 20px;
     height: 20px;
+    position: absolute;
+    top: 497px;
     cursor: pointer;
 }
 
 #arrowLeft {
-    display: none;
-    position: absolute;
-    top: 600px;
-    left: 425px;
+    display: none; 
+    left: 434px;
 }
 
 #arrowRight {
-    position: absolute;
-    top: 600px;
-    left: 1300px;
+    left: 1324px;
 }
 
 .horses{
+    position: relative;
+    top: -26px;
     border: 3px double #86592d;
     margin: 40px;
     border-radius: 15px;
@@ -179,8 +179,8 @@ label {
     position: absolute;
     height: 350px;
     width: 800px;
-    top: 420px;
-    left: 465px;
+    top: 378px;
+    left: 483px;
     background-image: url(/image/sales.jpg);
     display: block;
     z-index: 100;
@@ -191,8 +191,8 @@ label {
     position: relative;
     height: 20px;
     width: 20px;
-    top: 362px;
-    left: 1222px;
+    top: 320px;
+    left: 1240px;
     background-image: url(/image/sales.jpg);
     display: block;
     z-index: 100;
@@ -271,6 +271,7 @@ ul.nav.navbar-nav{
     position: relative;
     top: 5px;
     left: 200px;
+    margin: -6px;
 }
 
 ul.nav.navbar-nav li a, .navbar-brand{
@@ -293,4 +294,13 @@ ul.nav.navbar-nav li a, .navbar-brand{
 #submitDay{
     position: relative;
     left: -226px;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    height: 57px;
+}
+
+#logoCascina {
+    top: -14px;
+    left: 60px;
 }
