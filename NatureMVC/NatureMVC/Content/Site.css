@@ -1,9 +1,10 @@
 ﻿body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(/image/back_image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding-top: 50px;
     padding-bottom: 20px;
-    background-attachment: fixed;
 }
 
 .body-content {
@@ -22,7 +23,7 @@
     border-color: #ffaa00;
     border-radius: 15px;
     width: 400px;
-    height: 600px;
+    height: 650px;
     top: -30px;
 }
 
@@ -38,16 +39,16 @@
 label {
     line-height: 4px;
     font-weight: bold;
-    color:  #77b300;
+    color: #77b300;
+    margin-top: 10px;
 }
 
 #textarea {
     width: 250px;
 }
 
-/*.calendar*/
-.ui-datepicker-trigger {  
-        width: 25px;
+.ui-datepicker-trigger {
+    width: 25px;
     height: 25px;
     cursor: pointer;
 }
@@ -63,7 +64,7 @@ label {
 
 #first {
     display: block;
-} 
+}
 
 #arrowLeft, #arrowRight {
     width: 20px;
@@ -74,7 +75,7 @@ label {
 }
 
 #arrowLeft {
-    display: none; 
+    display: none;
     left: 434px;
 }
 
@@ -82,43 +83,38 @@ label {
     left: 1324px;
 }
 
-.horses{
+#horses {
     position: relative;
     top: -26px;
-    border: 3px double #86592d;
     margin: 40px;
-    border-radius: 15px;
     padding: 15px;
+    border-radius: 15px;
     background-color: #ffb31a;
-} 
+}
 
-#checkHorseRideDate{
+#checkHorseRideDate {
     position: relative;
-    padding-bottom: 10px;
-    padding-right: 10px;
+    left: 19px;
+    width: 292px;
+    padding: 10px;
 }
 
 .showHorse {
     position: relative;
-    left: 450px;
+    top: -151px;
+    left: 35%;
     display: none;
     width: 380px;
     height: 350px;
 }
 
-#borderDesign {
-    position:relative;
-    left:-230px;
-    width: 600px;
-    border: 2px double #86592d;
-    border-radius: 15px;
-    background-image: url(/image/back_image.jpg);
-    background-repeat: no-repeat;
-}
-
-#age{
+#age {
     display: none;
-    margin: 15px; 
+    margin: 15px;
+    position: relative;
+    top: -165px;
+    left: 493px;
+    width: 450px;
 }
 
 .legend {
@@ -127,53 +123,56 @@ label {
 }
 
 .button {
-    background-color: #77b300; 
+    background-color: #77b300;
     border: none;
     color: white;
     padding: 15px 32px;
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
 }
 
-.button.disabled {
-  opacity: 0.65; 
-  cursor: not-allowed;
-}
+    .button.disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
 
-.button, .button.disabled:hover {
-    display: block;
-    margin-bottom: 20px;
-    text-decoration: none;
-    border:1px solid #558000; 
-    -webkit-border-radius: 3px; 
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    font-family:arial, helvetica, sans-serif; 
-    padding: 10px 10px 10px 10px; 
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-    text-align: center; 
-    color: #FFFFFF; 
-    background-color: #77b300;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #669900), color-stop(100%, #558000));
-    background-image: -webkit-linear-gradient(top, #669900, #558000);
-    background-image: -moz-linear-gradient(top, #669900, #558000);
-    background-image: -ms-linear-gradient(top, #669900, #558000);
-    background-image: -o-linear-gradient(top, #669900, #558000);
-    background-image: linear-gradient(top, #669900, #558000);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#669900, endColorstr=#558000);
-}
+        .button, .button.disabled:hover {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            border: 1px solid #558000;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            font-family: arial, helvetica, sans-serif;
+            padding: 10px 10px 10px 10px;
+            text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+            text-align: center;
+            color: #FFFFFF;
+            background-color: #77b300;
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #669900), color-stop(100%, #558000));
+            background-image: -webkit-linear-gradient(top, #669900, #558000);
+            background-image: -moz-linear-gradient(top, #669900, #558000);
+            background-image: -ms-linear-gradient(top, #669900, #558000);
+            background-image: -o-linear-gradient(top, #669900, #558000);
+            background-image: linear-gradient(top, #669900, #558000);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#669900, endColorstr=#558000);
+        }
 
-.button:hover{
-    border:1px solid #558000;
-    background-color: #558000;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009933), color-stop(100%, #006622));
-    background-image: -webkit-linear-gradient(top, #009933, #006622);
-    background-image: -moz-linear-gradient(top, #009933, #006622b);
-    background-image: -ms-linear-gradient(top, #009933, #006622);
-    background-image: -o-linear-gradient(top, #009933, #006622);
-    background-image: linear-gradient(top, #009933, #006622b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#009933, endColorstr=#006622);
-}
+            .button:hover {
+                border: 1px solid #558000;
+                background-color: #558000;
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009933), color-stop(100%, #006622));
+                background-image: -webkit-linear-gradient(top, #009933, #006622);
+                background-image: -moz-linear-gradient(top, #009933, #006622b);
+                background-image: -ms-linear-gradient(top, #009933, #006622);
+                background-image: -o-linear-gradient(top, #009933, #006622);
+                background-image: linear-gradient(top, #009933, #006622b);
+                filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#009933, endColorstr=#006622);
+            }
 
 #salesTime {
     position: absolute;
@@ -187,7 +186,7 @@ label {
     cursor: pointer;
 }
 
-#escPoint{
+#escPoint {
     position: relative;
     height: 20px;
     width: 20px;
@@ -199,38 +198,38 @@ label {
     cursor: pointer;
 }
 
-.closingDays{
+.closingDays {
     position: relative;
     display: none;
 }
 
-.closingDays.ui-widget.ui-widget-content {
-    border: 1px solid  #cc2900;
-}
+    .closingDays.ui-widget.ui-widget-content {
+        border: 1px solid #cc2900;
+    }
 
-.closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-    border-bottom-right-radius: 5px;
-}
+    .closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+        border-bottom-right-radius: 5px;
+    }
 
-.closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
-    border-bottom-left-radius: 5px;
-}
+    .closingDays.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+        border-bottom-left-radius: 5px;
+    }
 
-.closingDays.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-    border-top-right-radius: 5px;
-}
+    .closingDays.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+        border-top-right-radius: 5px;
+    }
 
-.closingDays.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-    border-top-left-radius: 5px;
-}
+    .closingDays.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+        border-top-left-radius: 5px;
+    }
 
-.closingDays.ui-widget-content{
-    border: 1px solid  #cc2900;
-    background-image: url(/image/background_closingDay.jpg);
-    color: #0086b3;
-}
+    .closingDays.ui-widget-content {
+        border: 1px solid #cc2900;
+        background-image: url(/image/background_closingDay.jpg);
+        color: #0086b3;
+    }
 
-.navbar-inverse { 
+.navbar-inverse {
     background-color: #000000;
     position: absolute;
     top: 0px;
@@ -241,7 +240,7 @@ label {
 }
 
 
-.nav.navbar-nav{
+.nav.navbar-nav {
     display: inline-flex;
     list-style-type: none;
 }
@@ -252,55 +251,62 @@ li.nav.navbar-nav {
     border: 10px;
 }
 
-ul.nav.navbar-nav.navbar-right{
+ul.nav.navbar-nav.navbar-right {
     position: relative;
     top: 5px;
     left: 850px;
 }
 
-#logoCascina{
+#logoCascina {
     position: relative;
     top: 40px;
 }
 
-ul.nav.navbar-nav.navbar-right li{
+ul.nav.navbar-nav.navbar-right li {
     margin: 10px;
 }
 
-ul.nav.navbar-nav{
+ul.nav.navbar-nav {
     position: relative;
     top: 5px;
     left: 200px;
     margin: -6px;
 }
 
-ul.nav.navbar-nav li a, .navbar-brand{
-    margin: 10px;
-    color: white;
-}
+    ul.nav.navbar-nav li a, .navbar-brand {
+        margin: 10px;
+        color: white;
+    }
 
- .availableHorseRide{
+.availableHorseRide {
     position: relative;
-    left: 500px;
+    left: 50%;
     width: 600px;
 }
 
-#checkHorseRideDate{
+#checkHorseRideDate {
     position: relative;
-    left: 500px;
+    left: 8px;
     width: 1000px;
 }
 
-#submitDay{
+#submitDay {
     position: relative;
     left: -226px;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top {
     height: 57px;
+    max-width: 100%;
 }
 
 #logoCascina {
     top: -14px;
     left: 60px;
 }
+
+#checkHorseRideDate.horsesBorder, #borderDesign {
+    border: 2px double #86592d;
+    border-radius: 15px;
+    background-image: url(/image/back_image.jpg);
+    background-repeat: no-repeat;

@@ -13,41 +13,26 @@
             <h2 class="heading2">Request a free estimate</h2>
             <div class="day">
                 <form class="dataSelection">
-                    <label for="datepicker">
-                        Check- in<br />
-                    </label>
-                    <input type="text" name="checkDatein" id="datepicker" class="calendar"/><br />
-                    <label for="dateRangepicker">
-                        Check-out<br />
-                    </label>
-                    <input type="text" name="checkDateout" id="dateRangepicker" class="calendar"/><br />
-                    <label for="numAdults">
-                        Adults<br />
-                    </label>
-                    <input type="number" name="adults" min="1" max="20" id="numadults" /><br />
-                    <label for="numChildren">
-                        Children<br />
-                    </label>
-                    <input type="number" name="children" min="0" max="10" id="numchildren" /><br />
-                    <label for="fullName">
-                        Name<br />
-                    </label>
-                    <input type="text" name="firstname" value="" placeholder="Fullname" /><br />
-                    <label for="emailAddress">
-                        Email<br />
-                    </label>
-                    <input type="email" /><br />
-                    <label for="phoneNumber">
-                        Phone<br />
-                    </label>
-                    <input type="tel" /><br />
-                    <label for="characters">
-                        Request<br />
-                    </label>
+                    <label for="datepicker" >Check- in<br /></label>
+                    <input type="text" name="checkDatein" id="datepicker" class="calendar" required/><br />
+                    <label for="dateRangepicker">Check-out<br /></label>   
+                    <input type="text" name="checkDateout" id="dateRangepicker" class="calendar" required/><br />
+                    <label for="numAdults" >Adults<br /></label>
+                    <input type="number" name="adults" value="1" min="1" max="20" id="numAdults" required/><br />
+                    <label for="numChildren" >Children<br /></label>
+                    <input type="number" name="children" value="0" min="0" max="10" id="numChildren" /><br />
+                    <label for="firstName">First Name<br /></label>
+                    <input type="text" name="fname" value="" placeholder="Daniel" id="firstName" required/><br />
+                    <label for="lastName">Last Name<br /></label>
+                    <input type="text" name="lname" value="" placeholder="Heitz" id="lastName" required/><br />
+                    <label for="emailAddress">Email<br /></label>
+                    <input type="email" id="emailAddress" placeholder="daniel_heitz@gmail.com" required/><br />
+                    <label for="phoneNumber">Phone<br /></label>
+                    <input type="tel" id="phoneNumber" placeholder="Enter your phon number" required/><br />
+                    <label for="textarea">Request<br /></label>
                     <textarea rows="8" cols="50" id="textarea"></textarea><br />
-                    <label for="terms">
-                        <input type="radio" name="accept" value="yes" />Agree with  Terms & Conditions<br />
-                    </label>
+                    <label for="terms"></label>
+                        <input type="radio" name="accept" value="yes" id="terms"/>Agree with  Terms & Conditions<br />
                     <button type="submit" class="button">Send</button>
                 </form>
             </div>
@@ -65,21 +50,27 @@
         <img src="~/image/arrowLeft.png" id="arrowLeft" class="clickMe" />
         <img src="~/image/arrowRight.png" id="arrowRight" class="clickMe" />
     </div>
-    <div class="horses">
+    <div id="horses" class="horsesBorder">
         <div id="availability">
             <h2 class="heading2" id="headHorse">A Funny Ride</h2>
-            <div id="checkHorseRideDate">   
+            <div id="checkHorseRideDate" class="horsesBorder">   
                 <form class="dataSelection">
-                            <label for="dateRideHorse">
-                                Check 	availability<br />
-                                <input type="text" name="checkDate" id="datepickerHorse" class="calendar" /> <br />
-                            </label>
-                    <div id="age">
+                    <label for="fNameHR">First Name:</label>
+                    <input type="text" name="fname" value="" placeholder="Daniel" id="fNameHR" required/><br/>
+                    <label for="lNameHR">Last Name:</label>
+                    <input type="text" name="lname" value="" placeholder="Heitz" id="lNameHR" required/><br />
+                    <label for="emailAddressHR">Email:</label>
+                    <input type="email" id="emailAddressHR" placeholder="daniel_heitz@gmail.com" required/><br />
+                    <label for="phoneNumberHR">Phone:</label>
+                    <input type="tel" id="phoneNumberHR" placeholder="Enter your phon number" required /><br />
+                    <label for="datepickerHorse">Check availability</label><br/>
+                        <input type="text" name="checkDate" id="datepickerHorse" class="calendar"/> <br/>
+                     <div id="age" >
                         <fieldset id="borderDesign">
                             <legend class="legend">Your age is:</legend>
-                            <input type="radio" name="age" value="0-6" class="checkAge" /> <label for="0-6">0-6</label><br />
-                            <input type="radio" name="age" value="7-15" class="checkAge" /> <label for="7-15">7-15</label><br />
-                            <input type="radio" name="age" value="16-over" class="checkAge" /> <label for="16-Over5">16-Over</label>
+                            <input type="radio" name="age" value="0-6" class="checkAge"/> <label for="0-6">0-6</label><br/>
+                            <input type="radio" name="age" value="7-15" class="checkAge"/> <label for="7-15">7-15</label><br/>
+                            <input type="radio" name="age" value="16-over" class="checkAge"/> <label for="16-Over5">16-Over</label>
                         </fieldset>
                         <button type="submit" id="submitDay" class="button disabled">Check</button>
                     </div>
