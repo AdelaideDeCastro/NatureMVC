@@ -12,4 +12,3 @@ namespace NatureMVC.Models.Abstract
         IEnumerable<RangeData> RangeDatas { get; }
     }
     }
-}
