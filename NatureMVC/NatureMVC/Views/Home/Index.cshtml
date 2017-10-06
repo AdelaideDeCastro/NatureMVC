@@ -1,101 +1,133 @@
-﻿@{
+﻿@model Clients
+
+
+@{
     ViewBag.Title = "Nature is your friend";
+    Layout = "/Views/Shared/_Layout.cshtml";
+    Html.EnableClientValidation(false);
 }
 
 
-    <div id="dialogSales">
-        <img src="~/image/sales.jpg" id="salesTime" />
-        <img src="~/image/esc.jpg" id="escPoint" />
-    </div>
-    <div id="informationData">
-        <img src="~/image/logo.png" id="logoCascina"/>
-        <div id="reservation">
-            <h2 class="heading2">Request a free estimate</h2>
-            <div class="day">
-                <form class="dataSelection">
-                    <label for="datepicker" >Check- in<br /></label>
-                    <input type="text" name="checkDatein" id="datepicker" class="calendar" required/><br />
-                    <label for="dateRangepicker">Check-out<br /></label>   
-                    <input type="text" name="checkDateout" id="dateRangepicker" class="calendar" required/><br />
-                    <label for="numAdults" >Adults<br /></label>
-                    <input type="number" name="adults" value="1" min="1" max="20" id="numAdults" required/><br />
-                    <label for="numChildren" >Children<br /></label>
-                    <input type="number" name="children" value="0" min="0" max="10" id="numChildren" /><br />
-                    <label for="firstName">First Name<br /></label>
-                    <input type="text" name="fname" value="" placeholder="Daniel" id="firstName" required/><br />
-                    <label for="lastName">Last Name<br /></label>
-                    <input type="text" name="lname" value="" placeholder="Heitz" id="lastName" required/><br />
-                    <label for="emailAddress">Email<br /></label>
-                    <input type="email" id="emailAddress" placeholder="daniel_heitz@gmail.com" required/><br />
-                    <label for="phoneNumber">Phone<br /></label>
-                    <input type="tel" id="phoneNumber" placeholder="Enter your phon number" required/><br />
-                    <label for="textarea">Request<br /></label>
-                    <textarea rows="8" cols="50" id="textarea"></textarea><br />
-                    <label for="terms"></label>
-                        <input type="radio" name="accept" value="yes" id="terms"/>Agree with  Terms & Conditions<br />
-                    <button type="submit" class="button">Send</button>
-                </form>
-            </div>
+<div id="dialogSales">
+    <img src="~/image/sales.jpg" id="salesTime" />
+    <img src="~/image/esc.jpg" id="escPoint" />
+</div>
+<div id="informationData">
+    <img src="~/image/logo.png" id="logoCascina" />
+    <div id="reservation">
+        <h2 class="heading2">Request a free estimate</h2>
+        <div class="day">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+
+                @*@Html.LabelFor(x => x.Checkin)
+                    @Html.EditorFor(x => x.Checkin)
+                    <br />
+                        @Html.LabelFor(x => x.Checkout)
+                        @Html.EditorFor(x => x.Checkin)
+                        <br />
+                        @Html.LabelFor(x => x.Adult)
+                        @Html.EditorFor(x => x.Adult)
+                        <br />
+                        @Html.LabelFor(x => x.Children)
+                        @Html.EditorFor(x => x.Children)*@
+                <br />
+                @Html.LabelForModel("Firstname")     @*(x => x.Firstname)*@
+                @Html.EditorForModel("Firstname")
+                @*@Html.EditorFor(x => x.Firstname, "Daniel")*@
+                <br />
+                @Html.LabelFor(x => x.Surname)
+                @Html.EditorFor(x => x.Surname, "Heintz")
+                <br />
+                    @*@Html.LabelFor(x => x.Email)
+                        @Html.EditorFor("Email", "daniel.heintz@gmail.com")
+                        <br />
+                        @Html.LabelFor(x => x.Phone)
+                        @Html.EditorFor("Phone")
+                        <br />
+                        @Html.LabelFor(x => x.Request)
+                        @Html.TextArea("textarea", "", 8, 50, null)*@
+                    <br />
+                    @Html.CheckBox("terms", false)
+                    <button type="submit" class="button"> Send </button>
+            }
         </div>
     </div>
-    <div id="showImage">
-        <img src="~/image/cascina.jpg" class="showMe" id="first" />
-        <img src="~/image/interno.jpg" class="showMe" />
-        <img src="~/image/esterno.jpeg" class="showMe" />
-        <img src="~/image/evento.jpeg" class="showMe" />
-        <img src="~/image/giochi.jpeg" class="showMe" />
-        <img src="~/image/notte.jpeg" class="showMe" />
-        <img src="~/image/pavone.jpg" class="showMe" />
-        <img src="~/image/animali.jpeg" class="showMe" />
-        <img src="~/image/arrowLeft.png" id="arrowLeft" class="clickMe" />
-        <img src="~/image/arrowRight.png" id="arrowRight" class="clickMe" />
-    </div>
-    <div id="horses" class="horsesBorder">
-        <div id="availability">
-            <h2 class="heading2" id="headHorse">A Funny Ride</h2>
-            <div id="checkHorseRideDate" class="horsesBorder">   
-                <form class="dataSelection">
-                    <label for="fNameHR">First Name:</label>
-                    <input type="text" name="fname" value="" placeholder="Daniel" id="fNameHR" required/><br/>
-                    <label for="lNameHR">Last Name:</label>
-                    <input type="text" name="lname" value="" placeholder="Heitz" id="lNameHR" required/><br />
-                    <label for="emailAddressHR">Email:</label>
-                    <input type="email" id="emailAddressHR" placeholder="daniel_heitz@gmail.com" required/><br />
-                    <label for="phoneNumberHR">Phone:</label>
-                    <input type="tel" id="phoneNumberHR" placeholder="Enter your phon number" required /><br />
-                    <label for="datepickerHorse">Check availability</label><br/>
-                        <input type="text" name="checkDate" id="datepickerHorse" class="calendar"/> <br/>
-                     <div id="age" >
+</div>
+<div id="showImage">
+    <img src="~/image/cascina.jpg" class="showMe" id="first" />
+    <img src="~/image/interno.jpg" class="showMe" />
+    <img src="~/image/esterno.jpeg" class="showMe" />
+    <img src="~/image/evento.jpeg" class="showMe" />
+    <img src="~/image/giochi.jpeg" class="showMe" />
+    <img src="~/image/notte.jpeg" class="showMe" />
+    <img src="~/image/pavone.jpg" class="showMe" />
+    <img src="~/image/animali.jpeg" class="showMe" />
+    <img src="~/image/arrowLeft.png" id="arrowLeft" class="clickMe" />
+    <img src="~/image/arrowRight.png" id="arrowRight" class="clickMe" />
+</div>
+<div id="horses" class="horsesBorder">
+    <div id="availability">
+        <h2 class="heading2" id="headHorse">A Funny Ride</h2>
+
+        <div id="checkHorseRideDate" class="horsesBorder">
+            @using (Html.BeginForm())
+            {
+                @Html.LabelFor(x => x.Firstname)
+                @Html.Editor("Firstname")
+                <br />
+                @Html.LabelFor(x => x.Surname)
+                @Html.Editor("Surname")
+                <br />
+                @*@Html.LabelFor(x => x.Email)*@
+                @Html.TextBox("Email", "daniel.heintz@gmail.com")
+                <br />
+                @*@Html.LabelFor(x => x.Phone)*@
+                @Html.TextBox("Phone")
+                <br />
+                @*@Html.LabelFor(x => x.Data)*@
+                @Html.TextBox("Data")
+                <br />
+                    <div id="age">
                         <fieldset id="borderDesign">
                             <legend class="legend">Your age is:</legend>
-                            <input type="radio" name="age" value="0-6" class="checkAge"/> <label for="0-6">0-6</label><br/>
-                            <input type="radio" name="age" value="7-15" class="checkAge"/> <label for="7-15">7-15</label><br/>
-                            <input type="radio" name="age" value="16-over" class="checkAge"/> <label for="16-Over5">16-Over</label>
+                            @*@Html.LabelFor(x => x.Request)*@
+                            @Html.RadioButton("age0_6", "val", true)
+                            <input type="radio" name="age0_6" value="val" class="checkAge" id="age0_6" />
+
+                            @*@Html.LabelFor(x => x.Request)*@
+                            @Html.RadioButton("age7_15", "val", true)
+                            <input type="radio" name="age7_15" value="val" class="checkAge" id="age7_15" />
+
+                            @*@Html.LabelFor(x => x.Request)*@
+                            @Html.RadioButton("ageOver16", "val", true)
+                            <input type="radio" name="ageOver16" value="val" class="checkAge" id="ageOver16" />
                         </fieldset>
                         <button type="submit" id="submitDay" class="button disabled">Check</button>
                     </div>
-                </form>
-            </div>
+            }
         </div>
-        <img src="~/image/pony.jpg" id="pony" class="showHorse" />
-        <img src="~/image/medio.jpg" id="medio" class="showHorse" />
-        <img src="~/image/grande.jpg" id="grande" class="showHorse" />
     </div>
-    <div class="closingDays" title="Closing Days">
-        <p>
-            <strong>Remember!!!</strong> We are closed during these days:<br />
-            <ul>
-                <li>January 1st</li>
-                <li>January 6th</li>
-                <li>Easter day</li>
-                <li>August 15th</li>
-                <li>December 31st</li>
-            </ul>
-        </p>
-    </div>
-    <!--<script src="js/r.js" data-main="js/app"></script>-->
-    <!--<script src="/js/jquery-ui.js"></script>
-    <script src="/js/jquery.js"></script>-->
+    <img src="~/image/pony.jpg" id="pony" class="showHorse" />
+    <img src="~/image/medio.jpg" id="medio" class="showHorse" />
+    <img src="~/image/grande.jpg" id="grande" class="showHorse" />
+</div>
+<div class="closingDays" title="Closing Days">
+    <p>
+        <strong>Remember!!!</strong> We are closed during these days:<br />
+        <ul>
+            <li>January 1st</li>
+            <li>January 6th</li>
+            <li>Easter day</li>
+            <li>August 15th</li>
+            <li>December 31st</li>
+        </ul>
+    </p>
+</div>
+<!--<script src="js/r.js" data-main="js/app"></script>-->
+<!--<script src="/js/jquery-ui.js"></script>
+<script src="/js/jquery.js"></script>-->
 
 @section scripts{
     <script src="~/Typescript/app.js"></script>

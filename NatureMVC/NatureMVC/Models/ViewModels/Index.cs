@@ -2,26 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using NatureMVC.Models.Concrete;
-using NatureMVC.Models.Entities;
+using System.Web.Mvc;
+using NatureMVC.Models.Abstract;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
+
 
 namespace NatureMVC.Models.ViewModels
 {
+    [MetadataType(typeof(IndexViewModel))]
     public class Index
     {
-        public IEnumerable<Client> Clients { get; set; }
-        public IEnumerable<Info_Client> Info_Clients { get; set; }
-        public IEnumerable<Client_Request> Client_Requests { get; set; }
-        public IEnumerable<Client_Data> Client_Datas { get; set; }
-        public IEnumerable<RangeData> RangeDatas { get; set; }
+        [HiddenInput(DisplayValue = false)]
+        public IClientRepository Clients { get; set; }
+        public IInfoClientRepository InfoClients { get; set; }
+        public IClientRequestRepository ClientRequests { get; set; }
+        public IDataClientRepository DataClients { get; set; }
+        public IRangeDataRepository RangeDatas { get; set; }
+        public IClientForeignKeyRepository ClientForeignKeys { get; set; }
 
-        public Index(IEnumerable<Client> Clients, IEnumerable<Info_Client> Info_Clients, IEnumerable<Client_Request> ClientRequests, IEnumerable<Client_Data> Client_Datas, IEnumerable<RangeData> RangeDatas)
+        public Index(IClientRepository Clients, IInfoClientRepository InfoClients, IClientRequestRepository ClientRequests, IDataClientRepository DataClients, IRangeDataRepository RangeDatas, IClientForeignKeyRepository ClientForeignKeys)
         {
             this.Clients = Clients;
-            this.Info_Clients = Info_Clients;
-            this.Client_Requests = Client_Requests;
-            this.Client_Datas = Client_Datas;
+            this.InfoClients = InfoClients;
+            this.ClientRequests = ClientRequests;
+            this.DataClients = DataClients;
             this.RangeDatas = RangeDatas;
+            this.ClientForeignKeys = ClientForeignKeys;
         }
     }
 }
+

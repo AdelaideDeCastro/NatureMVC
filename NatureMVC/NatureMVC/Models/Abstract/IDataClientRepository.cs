@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NatureMVC.Models.Entities;
 
 namespace NatureMVC.Models.Abstract
 {
-    interface IClient_DataRepository
+    public interface IDataClientRepository
     {
-        IEnumerable<Client_Data> IClient_Datas { get; }
+        DataClient DataClients { get; }
     }
 }

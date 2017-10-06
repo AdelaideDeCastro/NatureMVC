@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NatureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClientForeignKeys">
+          <Key>
+            <PropertyRef Name="Id_FK" />
+          </Key>
+          <Property Name="Id_FK" Type="int" Nullable="false" />
+          <Property Name="Id_C" Type="int" Nullable="false" />
+          <Property Name="Id_RD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientRequests">
+          <Key>
+            <PropertyRef Name="Id_R" />
+          </Key>
+          <Property Name="Id_R" Type="int" Nullable="false" />
+          <Property Name="Checkin" Type="date" Nullable="false" />
+          <Property Name="Checkout" Type="date" Nullable="false" />
+          <Property Name="Request" Type="nvarchar(max)" />
+          <Property Name="Adult" Type="int" Nullable="false" />
+          <Property Name="Children" Type="int" />
+          <Property Name="Id_C" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_C" />
+          </Key>
+          <Property Name="Id_C" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DataClients">
+          <Key>
+            <PropertyRef Name="Id_D" />
+          </Key>
+          <Property Name="Id_D" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InfoClients">
+          <Key>
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="Phone" Type="bigint" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Id_C" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RangeDatas">
+          <Key>
+            <PropertyRef Name="Id_RD" />
+          </Key>
+          <Property Name="Id_RD" Type="int" Nullable="false" />
+          <Property Name="RangeData" Type="date" Nullable="false" />
+          <Property Name="Id_D" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Clients_ClientForeignKeys">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="ClientForeignKeys" Type="Self.ClientForeignKeys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="ClientForeignKeys">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_ClientRequests">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="ClientRequests" Type="Self.ClientRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="ClientRequests">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_InfoClients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="InfoClients" Type="Self.InfoClients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="InfoClients">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataClients_RangeDatas">
+          <End Role="DataClients" Type="Self.DataClients" Multiplicity="1" />
+          <End Role="RangeDatas" Type="Self.RangeDatas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DataClients">
+              <PropertyRef Name="Id_D" />
+            </Principal>
+            <Dependent Role="RangeDatas">
+              <PropertyRef Name="Id_D" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RangeDatas_ClientForeignKeys">
+          <End Role="RangeDatas" Type="Self.RangeDatas" Multiplicity="1" />
+          <End Role="ClientForeignKeys" Type="Self.ClientForeignKeys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RangeDatas">
+              <PropertyRef Name="Id_RD" />
+            </Principal>
+            <Dependent Role="ClientForeignKeys">
+              <PropertyRef Name="Id_RD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NatureModelStoreContainer">
+          <EntitySet Name="ClientForeignKeys" EntityType="Self.ClientForeignKeys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientRequests" EntityType="Self.ClientRequests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DataClients" EntityType="Self.DataClients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InfoClients" EntityType="Self.InfoClients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RangeDatas" EntityType="Self.RangeDatas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clients_ClientForeignKeys" Association="Self.FK_Clients_ClientForeignKeys">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientForeignKeys" EntitySet="ClientForeignKeys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_ClientRequests" Association="Self.FK_Clients_ClientRequests">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientRequests" EntitySet="ClientRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_InfoClients" Association="Self.FK_Clients_InfoClients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="InfoClients" EntitySet="InfoClients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataClients_RangeDatas" Association="Self.FK_DataClients_RangeDatas">
+            <End Role="DataClients" EntitySet="DataClients" />
+            <End Role="RangeDatas" EntitySet="RangeDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RangeDatas_ClientForeignKeys" Association="Self.FK_RangeDatas_ClientForeignKeys">
+            <End Role="RangeDatas" EntitySet="RangeDatas" />
+            <End Role="ClientForeignKeys" EntitySet="ClientForeignKeys" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NatureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClientRequest">
+          <Key>
+            <PropertyRef Name="Id_R" />
+          </Key>
+          <Property Name="Id_R" Type="Int32" Nullable="false" />
+          <Property Name="Checkin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Checkout" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Request" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adult" Type="Int32" Nullable="false" />
+          <Property Name="Children" Type="Int32" />
+          <Property Name="Id_C" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Clients_ClientRequests" FromRole="ClientRequests" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id_C" />
+          </Key>
+          <Property Name="Id_C" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ClientRequests" Relationship="Self.FK_Clients_ClientRequests" FromRole="Clients" ToRole="ClientRequests" />
+          <NavigationProperty Name="InfoClients" Relationship="Self.FK_Clients_InfoClients" FromRole="Clients" ToRole="InfoClients" />
+          <NavigationProperty Name="ClientForeignKeys" Relationship="NatureModel.FK_Clients_ClientForeignKeys" FromRole="Client" ToRole="ClientForeignKey" />
+        </EntityType>
+        <EntityType Name="InfoClient">
+          <Key>
+            <PropertyRef Name="Phone" />
+          </Key>
+          <Property Name="Phone" Type="Int64" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_C" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Clients_InfoClients" FromRole="InfoClients" ToRole="Clients" />
+        </EntityType>
+        <Association Name="FK_Clients_ClientRequests">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="ClientRequests" Type="Self.ClientRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="ClientRequests">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_InfoClients">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="InfoClients" Type="Self.InfoClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="InfoClients">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NatureEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientRequests" EntityType="Self.ClientRequest" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="InfoClients" EntityType="Self.InfoClient" />
+          <AssociationSet Name="FK_Clients_ClientRequests" Association="Self.FK_Clients_ClientRequests">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientRequests" EntitySet="ClientRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_InfoClients" Association="Self.FK_Clients_InfoClients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="InfoClients" EntitySet="InfoClients" />
+          </AssociationSet>
+          <EntitySet Name="ClientForeignKeys" EntityType="NatureModel.ClientForeignKey" />
+          <EntitySet Name="DataClients" EntityType="NatureModel.DataClient" />
+          <EntitySet Name="RangeDatas" EntityType="NatureModel.RangeData" />
+          <AssociationSet Name="FK_Clients_ClientForeignKeys" Association="NatureModel.FK_Clients_ClientForeignKeys">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="ClientForeignKey" EntitySet="ClientForeignKeys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RangeDatas_ClientForeignKeys" Association="NatureModel.FK_RangeDatas_ClientForeignKeys">
+            <End Role="RangeData" EntitySet="RangeDatas" />
+            <End Role="ClientForeignKey" EntitySet="ClientForeignKeys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DataClients_RangeDatas" Association="NatureModel.FK_DataClients_RangeDatas">
+            <End Role="DataClient" EntitySet="DataClients" />
+            <End Role="RangeData" EntitySet="RangeDatas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ClientForeignKey">
+          <Key>
+            <PropertyRef Name="Id_FK" />
+          </Key>
+          <Property Name="Id_FK" Type="Int32" Nullable="false" />
+          <Property Name="Id_C" Type="Int32" Nullable="false" />
+          <Property Name="Id_RD" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="NatureModel.FK_Clients_ClientForeignKeys" FromRole="ClientForeignKey" ToRole="Client" />
+          <NavigationProperty Name="RangeData" Relationship="NatureModel.FK_RangeDatas_ClientForeignKeys" FromRole="ClientForeignKey" ToRole="RangeData" />
+        </EntityType>
+        <EntityType Name="DataClient">
+          <Key>
+            <PropertyRef Name="Id_D" />
+          </Key>
+          <Property Name="Id_D" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="RangeDatas" Relationship="NatureModel.FK_DataClients_RangeDatas" FromRole="DataClient" ToRole="RangeData" />
+        </EntityType>
+        <EntityType Name="RangeData">
+          <Key>
+            <PropertyRef Name="Id_RD" />
+          </Key>
+          <Property Name="Id_RD" Type="Int32" Nullable="false" />
+          <Property Name="RangeData1" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_D" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClientForeignKeys" Relationship="NatureModel.FK_RangeDatas_ClientForeignKeys" FromRole="RangeData" ToRole="ClientForeignKey" />
+          <NavigationProperty Name="DataClient" Relationship="NatureModel.FK_DataClients_RangeDatas" FromRole="RangeData" ToRole="DataClient" />
+        </EntityType>
+        <Association Name="FK_Clients_ClientForeignKeys">
+          <End Type="NatureModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="NatureModel.ClientForeignKey" Role="ClientForeignKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id_C" />
+            </Principal>
+            <Dependent Role="ClientForeignKey">
+              <PropertyRef Name="Id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RangeDatas_ClientForeignKeys">
+          <End Type="NatureModel.RangeData" Role="RangeData" Multiplicity="1" />
+          <End Type="NatureModel.ClientForeignKey" Role="ClientForeignKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RangeData">
+              <PropertyRef Name="Id_RD" />
+            </Principal>
+            <Dependent Role="ClientForeignKey">
+              <PropertyRef Name="Id_RD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DataClients_RangeDatas">
+          <End Type="NatureModel.DataClient" Role="DataClient" Multiplicity="1" />
+          <End Type="NatureModel.RangeData" Role="RangeData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DataClient">
+              <PropertyRef Name="Id_D" />
+            </Principal>
+            <Dependent Role="RangeData">
+              <PropertyRef Name="Id_D" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NatureModelStoreContainer" CdmEntityContainer="NatureEntities">
+          <EntitySetMapping Name="ClientRequests">
+            <EntityTypeMapping TypeName="NatureModel.ClientRequest">
+              <MappingFragment StoreEntitySet="ClientRequests">
+                <ScalarProperty Name="Id_R" ColumnName="Id_R" />
+                <ScalarProperty Name="Checkin" ColumnName="Checkin" />
+                <ScalarProperty Name="Checkout" ColumnName="Checkout" />
+                <ScalarProperty Name="Request" ColumnName="Request" />
+                <ScalarProperty Name="Adult" ColumnName="Adult" />
+                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="Id_C" ColumnName="Id_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="NatureModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id_C" ColumnName="Id_C" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InfoClients">
+            <EntityTypeMapping TypeName="NatureModel.InfoClient">
+              <MappingFragment StoreEntitySet="InfoClients">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id_C" ColumnName="Id_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientForeignKeys">
+            <EntityTypeMapping TypeName="NatureModel.ClientForeignKey">
+              <MappingFragment StoreEntitySet="ClientForeignKeys">
+                <ScalarProperty Name="Id_RD" ColumnName="Id_RD" />
+                <ScalarProperty Name="Id_C" ColumnName="Id_C" />
+                <ScalarProperty Name="Id_FK" ColumnName="Id_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DataClients">
+            <EntityTypeMapping TypeName="NatureModel.DataClient">
+              <MappingFragment StoreEntitySet="DataClients">
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Id_D" ColumnName="Id_D" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RangeDatas">
+            <EntityTypeMapping TypeName="NatureModel.RangeData">
+              <MappingFragment StoreEntitySet="RangeDatas">
+                <ScalarProperty Name="Id_D" ColumnName="Id_D" />
+                <ScalarProperty Name="RangeData1" ColumnName="RangeData" />
+                <ScalarProperty Name="Id_RD" ColumnName="Id_RD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

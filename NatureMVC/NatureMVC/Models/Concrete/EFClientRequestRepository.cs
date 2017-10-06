@@ -6,10 +6,11 @@ using NatureMVC.Models.Abstract;
 
 namespace NatureMVC.Models.Concrete
 {
-    public class EFRangeDataRepository : IRangeDataRepository
+    public class EFClientRequestRepository : IClientRequestRepository
     {
         //private NatureEntities context = new NatureEntities();
 
-        public RangeData RangeDatas { get; }
+        public ClientRequest ClientRequests { get; }
+    
     }
 }

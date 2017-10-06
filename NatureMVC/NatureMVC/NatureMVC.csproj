@@ -134,6 +134,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -215,33 +217,68 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Client.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForeignKey.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientRequest.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataClient.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InfoClient.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelNature.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNature.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelNature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelNature.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNature.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Abstract\IClientForeignKeyRepository.cs" />
     <Compile Include="Models\Abstract\IClientRepository.cs" />
-    <Compile Include="Models\Abstract\IClient_DataRepository.cs" />
-    <Compile Include="Models\Abstract\IClient_RequestRepository.cs" />
-    <Compile Include="Models\Abstract\IInfo_ClientRepository.cs" />
+    <Compile Include="Models\Abstract\IClientRequestRepository.cs" />
+    <Compile Include="Models\Abstract\IDataClientRepository.cs" />
+    <Compile Include="Models\Abstract\IInfoClientRepository.cs" />
     <Compile Include="Models\Abstract\IRangeDataRepository.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Concrete\EFClientForeignKeyRepository.cs" />
     <Compile Include="Models\Concrete\EFClientRepository.cs" />
-    <Compile Include="Models\Concrete\EFClient_DataRepository.cs" />
-    <Compile Include="Models\Concrete\EFClient_RequestRepository.cs" />
-    <Compile Include="Models\Concrete\EFDbContext.cs" />
-    <Compile Include="Models\Concrete\EFInfo_ClientRepository.cs" />
+    <Compile Include="Models\Concrete\EFClientRequestRepository.cs" />
+    <Compile Include="Models\Concrete\EFDataClientRepository.cs" />
+    <Compile Include="Models\Concrete\EFInfoClientRepository.cs" />
     <Compile Include="Models\Concrete\EFRangeDataRepository.cs" />
-    <Compile Include="Models\Entities\Client.cs" />
-    <Compile Include="Models\Entities\Client_Data.cs" />
-    <Compile Include="Models\Entities\Client_Request.cs" />
-    <Compile Include="Models\Entities\Info_Client.cs" />
-    <Compile Include="Models\Entities\RangeData.cs" />
+    <Compile Include="Models\Entity\ClientForeignKeys.cs" />
+    <Compile Include="Models\Entity\ClientRequests.cs" />
+    <Compile Include="Clients.cs" />
+    <Compile Include="Models\Entity\DataClients.cs" />
+    <Compile Include="Models\Entity\InfoClients.cs" />
+    <Compile Include="Models\Entity\RangeDatas.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeData.cs">
+      <DependentUpon>ModelNature.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +322,16 @@
     <Content Include="image\sales.jpg" />
     <Content Include="image\secinterno.jfif" />
     <Content Include="image\suite_sentiero.jpeg" />
+    <Content Include="ModelNature.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNature.edmx</DependentUpon>
+      <LastGenOutput>ModelNature.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelNature.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNature.edmx</DependentUpon>
+      <LastGenOutput>ModelNature.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -294,6 +341,7 @@
     </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -328,9 +376,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <EntityDeploy Include="ModelNature.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelNature.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelNature.edmx.diagram">
+      <DependentUpon>ModelNature.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +398,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

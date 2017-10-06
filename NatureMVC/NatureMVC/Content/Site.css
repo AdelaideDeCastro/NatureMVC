@@ -310,3 +310,8 @@ ul.nav.navbar-nav {
     border-radius: 15px;
     background-image: url(/image/back_image.jpg);
     background-repeat: no-repeat;
+}
+
+.editor-label, .editor-field {
+    
+}
