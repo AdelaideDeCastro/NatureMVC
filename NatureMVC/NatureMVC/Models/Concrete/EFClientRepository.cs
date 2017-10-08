@@ -12,6 +12,6 @@ namespace NatureMVC.Models.Concrete
     {
         /*private NatureEntities context = new NatureEntities();*/
 
-        public Client Clients { get;}
+        public Client Clients { get; set; }
     }
 }

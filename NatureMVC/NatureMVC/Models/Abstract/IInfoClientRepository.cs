@@ -8,6 +8,6 @@ namespace NatureMVC.Models.Abstract
 {
     public interface IInfoClientRepository
     {
-        InfoClient InfoClients { get; }
+        InfoClient InfoClients { get; set; }
     }
 }

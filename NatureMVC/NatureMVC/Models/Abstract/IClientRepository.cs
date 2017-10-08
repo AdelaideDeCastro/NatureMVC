@@ -9,6 +9,6 @@ namespace NatureMVC.Models.Abstract
 {
      public interface IClientRepository
     {
-        Client Clients { get; }
+        Client Clients { get; set; }
     }
 }

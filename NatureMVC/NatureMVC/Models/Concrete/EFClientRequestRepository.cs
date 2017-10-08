@@ -10,7 +10,7 @@ namespace NatureMVC.Models.Concrete
     {
         //private NatureEntities context = new NatureEntities();
 
-        public ClientRequest ClientRequests { get; }
+        public ClientRequest ClientRequests { get; set; }
     
     }
 }

@@ -26,11 +26,11 @@ namespace NatureMVC.Controllers
             EFClientForeignKeyRepository clientForeignKeyRepository = new EFClientForeignKeyRepository();
             //IndexViewModel indexViewModel = new IndexViewModel();
 
-            return View(new Client());
+            return View(new Index(clientRepository.Clients, infoClientRepository, clientRequestRepository, dataClientRepository, rangeDataRepository, clientForeignKeyRepository));
         }
 
         [HttpPost]
-        public ActionResult Index(Clients client)   //public ActionResult Index(IndexViewModel indexViewModel)
+        public ActionResult Index(Clients clients)   //public ActionResult Index(IndexViewModel indexViewModel)
         {
             EFClientRepository clientRepository = new EFClientRepository();
 

@@ -1,4 +1,9 @@
-﻿@model Clients
+﻿@using NatureMVC.Models.ViewModels
+@model Index
+
+@functions {
+    public object Email { get; set; }
+}
 
 
 @{
@@ -21,7 +26,7 @@
             {
                 @Html.ValidationSummary()
 
-                @*@Html.LabelFor(x => x.Checkin)
+                @Html.LabelFor(x => x.ClientRequests)
                     @Html.EditorFor(x => x.Checkin)
                     <br />
                         @Html.LabelFor(x => x.Checkout)
@@ -31,23 +36,22 @@
                         @Html.EditorFor(x => x.Adult)
                         <br />
                         @Html.LabelFor(x => x.Children)
-                        @Html.EditorFor(x => x.Children)*@
+                        @Html.EditorFor(x => x.Children)
                 <br />
-                @Html.LabelForModel("Firstname")     @*(x => x.Firstname)*@
-                @Html.EditorForModel("Firstname")
-                @*@Html.EditorFor(x => x.Firstname, "Daniel")*@
+                @Html.LabelFor(x => x.Firstname)   
+                @Html.EditorFor(x => x.Firstname)
                 <br />
                 @Html.LabelFor(x => x.Surname)
-                @Html.EditorFor(x => x.Surname, "Heintz")
+                @Html.EditorFor(x => x.Surname)
                 <br />
-                    @*@Html.LabelFor(x => x.Email)
-                        @Html.EditorFor("Email", "daniel.heintz@gmail.com")
+                    @Html.LabelFor(x => x.Email)
+                        @Html.EditorFor(x => x.Email, "daniel.heintz@gmail.com")
                         <br />
                         @Html.LabelFor(x => x.Phone)
-                        @Html.EditorFor("Phone")
+                        @Html.EditorFor(x => x.Phone)
                         <br />
                         @Html.LabelFor(x => x.Request)
-                        @Html.TextArea("textarea", "", 8, 50, null)*@
+                        @Html.TextArea(x => x.Request, "", 8, 50, null)
                     <br />
                     @Html.CheckBox("terms", false)
                     <button type="submit" class="button"> Send </button>
@@ -80,13 +84,13 @@
                 @Html.LabelFor(x => x.Surname)
                 @Html.Editor("Surname")
                 <br />
-                @*@Html.LabelFor(x => x.Email)*@
+                @Html.LabelFor(x => x.Email)
                 @Html.TextBox("Email", "daniel.heintz@gmail.com")
                 <br />
-                @*@Html.LabelFor(x => x.Phone)*@
+                @Html.LabelFor(x => x.Phone)
                 @Html.TextBox("Phone")
                 <br />
-                @*@Html.LabelFor(x => x.Data)*@
+                @Html.LabelFor(x => x.Data)
                 @Html.TextBox("Data")
                 <br />
                     <div id="age">

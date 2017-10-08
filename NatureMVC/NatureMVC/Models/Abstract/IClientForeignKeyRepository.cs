@@ -8,6 +8,6 @@ namespace NatureMVC.Models.Abstract
 {
     public interface IClientForeignKeyRepository
     {
-        ClientForeignKey ClientForeignKeys { get; }
+        ClientForeignKey ClientForeignKeys { get; set; }
     }
 }

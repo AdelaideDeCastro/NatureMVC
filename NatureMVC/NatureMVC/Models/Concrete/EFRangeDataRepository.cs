@@ -10,6 +10,6 @@ namespace NatureMVC.Models.Concrete
     {
         //private NatureEntities context = new NatureEntities();
 
-        public RangeData RangeDatas { get; }
+        public RangeData RangeDatas { get; set; }
     }
 }

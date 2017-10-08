@@ -6,30 +6,29 @@ using System.Web.Mvc;
 using NatureMVC.Models.Abstract;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-
-
+using NatureMVC.Models.Concrete;
 
 namespace NatureMVC.Models.ViewModels
 {
     [MetadataType(typeof(IndexViewModel))]
     public class Index
     {
-        [HiddenInput(DisplayValue = false)]
-        public IClientRepository Clients { get; set; }
-        public IInfoClientRepository InfoClients { get; set; }
-        public IClientRequestRepository ClientRequests { get; set; }
-        public IDataClientRepository DataClients { get; set; }
-        public IRangeDataRepository RangeDatas { get; set; }
-        public IClientForeignKeyRepository ClientForeignKeys { get; set; }
+        public EFClientRepository Clients { get; set; }
+        public EFInfoClientRepository InfoClients { get; set; }
+        public EFClientRequestRepository ClientRequests { get; set; }
+        public  EFDataClientRepository DataClients { get; set; }
+        public  EFRangeDataRepository RangeDatas { get; set; }
+        public  EFClientForeignKeyRepository ClientForeignKeys { get; set; }
 
-        public Index(IClientRepository Clients, IInfoClientRepository InfoClients, IClientRequestRepository ClientRequests, IDataClientRepository DataClients, IRangeDataRepository RangeDatas, IClientForeignKeyRepository ClientForeignKeys)
+        public Index(IClientRepository Clients, EFInfoClientRepository InfoClients, EFClientRequestRepository ClientRequests, EFDataClientRepository DataClients, 
+            EFRangeDataRepository RangeDatas, EFClientForeignKeyRepository ClientForeignKeys)
         {
-            this.Clients = Clients;
-            this.InfoClients = InfoClients;
-            this.ClientRequests = ClientRequests;
-            this.DataClients = DataClients;
-            this.RangeDatas = RangeDatas;
-            this.ClientForeignKeys = ClientForeignKeys;
+            this.Clients.Clients = Clients.Clients;
+            this.InfoClients.InfoClients = InfoClients.InfoClients;
+            this.ClientRequests.ClientRequests = ClientRequests.ClientRequests;
+            this.DataClients.DataClients = DataClients.DataClients;
+            this.RangeDatas.RangeDatas = RangeDatas.RangeDatas;
+            this.ClientForeignKeys.ClientForeignKeys = ClientForeignKeys.ClientForeignKeys;
         }
     }
 }

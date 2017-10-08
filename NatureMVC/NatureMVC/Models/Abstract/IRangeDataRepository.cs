@@ -8,6 +8,6 @@ namespace NatureMVC.Models.Abstract
 {
     public interface IRangeDataRepository
         {
-            RangeData RangeDatas { get; }
+            RangeData RangeDatas { get; set; }
         }
 }

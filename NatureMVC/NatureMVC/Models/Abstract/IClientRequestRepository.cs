@@ -8,6 +8,6 @@ namespace NatureMVC.Models.Abstract
 {
     public interface IClientRequestRepository
     {
-        ClientRequest ClientRequests { get; }
+        ClientRequest ClientRequests { get; set; }
     }
 }
