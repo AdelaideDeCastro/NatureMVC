@@ -19,14 +19,19 @@ namespace NatureMVC.Controllers
         public ActionResult Index()
         {
             EFClientRepository clientRepository = new EFClientRepository();
+            clientRepository.Clients = new Client();
             EFInfoClientRepository infoClientRepository = new EFInfoClientRepository();
+            infoClientRepository.InfoClients = new InfoClient();
             EFClientRequestRepository clientRequestRepository = new EFClientRequestRepository();
+            clientRequestRepository.ClientRequests = new ClientRequest();
             EFDataClientRepository dataClientRepository = new EFDataClientRepository();
+            dataClientRepository.DataClients = new DataClient();
             EFRangeDataRepository rangeDataRepository = new EFRangeDataRepository();
+            rangeDataRepository.RangeDatas = new RangeData();
             EFClientForeignKeyRepository clientForeignKeyRepository = new EFClientForeignKeyRepository();
-            //IndexViewModel indexViewModel = new IndexViewModel();
+            clientForeignKeyRepository.ClientForeignKeys = new ClientForeignKey();
 
-            return View(new Index(clientRepository.Clients, infoClientRepository, clientRequestRepository, dataClientRepository, rangeDataRepository, clientForeignKeyRepository));
+            return View(new Index(clientRepository.Clients, infoClientRepository.InfoClients, clientRequestRepository.ClientRequests, dataClientRepository.DataClients, rangeDataRepository.RangeDatas, clientForeignKeyRepository.ClientForeignKeys));
         }
 
         [HttpPost]

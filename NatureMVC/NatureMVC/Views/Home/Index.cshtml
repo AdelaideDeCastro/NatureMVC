@@ -26,32 +26,32 @@
             {
                 @Html.ValidationSummary()
 
-                @Html.LabelFor(x => x.ClientRequests)
-                    @Html.EditorFor(x => x.Checkin)
+                @Html.LabelFor(x => x.ClientRequests.Checkin)
+                    @Html.EditorFor(x => x.ClientRequests.Checkin)
                     <br />
-                        @Html.LabelFor(x => x.Checkout)
-                        @Html.EditorFor(x => x.Checkin)
+                        @Html.LabelFor(x => x.ClientRequests.Checkout)
+                        @Html.EditorFor(x => x.ClientRequests.Checkout)
                         <br />
-                        @Html.LabelFor(x => x.Adult)
-                        @Html.EditorFor(x => x.Adult)
+                        @Html.LabelFor(x => x.ClientRequests.Adult)
+                        @Html.EditorFor(x => x.ClientRequests.Adult)
                         <br />
-                        @Html.LabelFor(x => x.Children)
-                        @Html.EditorFor(x => x.Children)
+                        @Html.LabelFor(x => x.ClientRequests.Children)
+                        @Html.EditorFor(x => x.ClientRequests.Children)
                 <br />
-                @Html.LabelFor(x => x.Firstname)   
-                @Html.EditorFor(x => x.Firstname)
+                @Html.LabelFor(x => x.Clients.Name)   
+                @Html.EditorFor(x => x.Clients.Name)
                 <br />
-                @Html.LabelFor(x => x.Surname)
-                @Html.EditorFor(x => x.Surname)
+                @Html.LabelFor(x => x.Clients.Surname)
+                @Html.EditorFor(x => x.Clients.Surname)
                 <br />
-                    @Html.LabelFor(x => x.Email)
-                        @Html.EditorFor(x => x.Email, "daniel.heintz@gmail.com")
+                    @Html.LabelFor(x => x.InfoClients.Email)
+                        @Html.EditorFor(x => x.InfoClients.Email)
                         <br />
-                        @Html.LabelFor(x => x.Phone)
-                        @Html.EditorFor(x => x.Phone)
+                        @Html.LabelFor(x => x.InfoClients.Phone)
+                        @Html.EditorFor(x => x.InfoClients.Phone)
                         <br />
-                        @Html.LabelFor(x => x.Request)
-                        @Html.TextArea(x => x.Request, "", 8, 50, null)
+                        @Html.LabelFor(x => x.ClientRequests.Request)
+                        @Html.EditorFor(x => x.ClientRequests.Request@*, "", 8, 50, null*@)
                     <br />
                     @Html.CheckBox("terms", false)
                     <button type="submit" class="button"> Send </button>
@@ -78,20 +78,20 @@
         <div id="checkHorseRideDate" class="horsesBorder">
             @using (Html.BeginForm())
             {
-                @Html.LabelFor(x => x.Firstname)
-                @Html.Editor("Firstname")
+                @Html.LabelFor(x => x.Clients.Name)
+                @Html.EditorFor(x => x.Clients.Name)
                 <br />
-                @Html.LabelFor(x => x.Surname)
-                @Html.Editor("Surname")
+                @Html.LabelFor(x => x.Clients.Surname)
+                @Html.EditorFor(x => x.Clients.Surname)
                 <br />
-                @Html.LabelFor(x => x.Email)
-                @Html.TextBox("Email", "daniel.heintz@gmail.com")
+                @Html.LabelFor(x => x.InfoClients.Email)
+                @Html.EditorFor(x => x.InfoClients.Email)
                 <br />
-                @Html.LabelFor(x => x.Phone)
-                @Html.TextBox("Phone")
+                @Html.LabelFor(x => x.InfoClients.Phone)
+                @Html.EditorFor(x => x.InfoClients.Phone)
                 <br />
-                @Html.LabelFor(x => x.Data)
-                @Html.TextBox("Data")
+                @Html.LabelFor(x => x.DataClients.Data)
+                @Html.EditorFor(x => x.DataClients.Data)
                 <br />
                     <div id="age">
                         <fieldset id="borderDesign">

@@ -10,13 +10,13 @@ namespace NatureMVC
 {
     
     public partial class Clients
-    {      
-        
+    {
+
+        [Required]
         [DisplayName("First Name")]
+        public string  Name { get; set; }
         [Required]
-        public string Firstname { get; set; }
         [DisplayName("Surname")]
-        [Required]
         public string Surname { get; set; }
     }
 }
